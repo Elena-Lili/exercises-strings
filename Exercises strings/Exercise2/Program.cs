@@ -19,13 +19,15 @@ namespace Exercise2
             // stringMultiple4();
             // Write method to convert a given string to all uppercase if it contains at least 2 uppercase characters in the first 4 characters.
             // ConvertString();
-            //Write a method that to remove a newline. \n
-            RemoveNewline();
-           // Console.WriteLine("s\n khfff".Replace("\n",""));
+            //Write a method that to remove a newline. 
+            // RemoveNewline();
             /*Write a method to display formatted text (width=50) as output. For example: If I have a text that's 134 characters long, the 
             formatted string should have maximum of 50 characters per line. In this case we will have 3 lines of text.*/
             //FormattedString();
-
+            //Write a method that formats a number with a percentage
+            //FormatNumber();
+            //Write a method that reverses a string.
+            ReverseString();
 
         }
         static void OutCharacter()
@@ -108,14 +110,57 @@ namespace Exercise2
             }
 
         }
-        static void RemoveNewline(); 
+        static void RemoveNewline()
         {
-            Console.WriteLine("Enter the string: ");
+            Console.WriteLine("Enter strings : ");
             string myString = Console.ReadLine();
-             StringBuider newString = new StringBuider();
-             newString = myString.Replace("\n');
+            string newString = myString.Replace("\\n", "");
+            Console.WriteLine(newString);
 
+ 
         }
 
+        static void FormattedString()
+        {
+            Console.WriteLine("Enter the text: ");
+            string myText = Console.ReadLine();
+            Console.WriteLine("Enter the text width: ");
+            int width = int.Parse(Console.ReadLine());
+        
+            for (int i = 0; i < myText.Length; i=i+width)     
+            {
+
+                if (i+width >= myText.Length)   
+                {
+                    Console.WriteLine(myText.Substring(i));  
+                }
+                else
+                {
+                    Console.WriteLine(myText.Substring(i, width));
+                 
+                }
+            }
+            
+        }
+        static void FormatNumber()
+        {
+            Console.WriteLine("Enter the number: ");
+            double number = double.Parse(Console.ReadLine());
+            Console.WriteLine(number.ToString("P2"));
+        }
+        static void ReverseString()
+        {
+            Console.WriteLine("Enter the string :");
+            string mystring = Console.ReadLine();
+            int n = mystring.Length;
+            string newstring = "";
+                for (int i = n - 1; i >= 0; i--)
+                {
+                    newstring = newstring + mystring[i];
+                }
+                Console.WriteLine(newstring);
+       
+        }
     }
 }
+
