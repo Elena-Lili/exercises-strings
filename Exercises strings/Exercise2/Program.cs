@@ -13,7 +13,8 @@ namespace Exercise2
             // Write a method that takes input from the user and displays that input back in upper and lower cases.
             // DisplayUpperAndLower();
             // Write a method that reverses a string if it's length is a multiple of 4
-            stringMultiple4();
+           // stringMultiple4();
+
         }
         static void OutCharacter()
         {
