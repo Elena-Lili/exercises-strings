@@ -27,7 +27,11 @@ namespace Exercise2
             //Write a method that formats a number with a percentage
             //FormatNumber();
             //Write a method that reverses a string.
-            ReverseString();
+            //ReverseString();
+            //Write a method that strips a set of characters from a string.
+            //StripsSetOfCharacters();
+            //Write a method that transforms to lowercase first n characters in a string
+            // TranformsToLowecase();
 
         }
         static void OutCharacter()
@@ -110,6 +114,7 @@ namespace Exercise2
             }
 
         }
+
         static void RemoveNewline()
         {
             Console.WriteLine("Enter strings : ");
@@ -161,6 +166,37 @@ namespace Exercise2
                 Console.WriteLine(newstring);
        
         }
+        static void StripsSetOfCharacters()
+        {
+            Console.WriteLine("Enter the string: ");
+            string myString = Console.ReadLine();
+            Console.WriteLine("Enter the set of characters: ");
+            string setChar = Console.ReadLine();
+            string newString = myString.Replace(setChar, "");
+            Console.WriteLine(newString);
+
+        }
+        static void TranformsToLowecase()
+        {
+            Console.WriteLine("Enter the string: ");
+            string myString = Console.ReadLine();
+            Console.WriteLine("Enter the number n: ");
+            int n = int.Parse(Console.ReadLine());
+            if (n < myString.Length)
+            { 
+            string stringForTrans = myString.Substring(0, n);
+            string newString = stringForTrans.ToLower() + myString.Substring(n);
+                Console.WriteLine(newString);
+            }
+            else
+            {
+                if (n == myString.Length)
+                    Console.WriteLine(myString.ToLower());
+                else
+                Console.WriteLine("The length of the string is less than n"); 
+            }    
+        }
     }
 }
+
 
